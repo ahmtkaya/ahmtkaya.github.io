@@ -1,5 +1,6 @@
-# Welcome to my page
-#About me
+## Welcome to my page
+#Header 1
+##About me
 agfhg
-#Projects
+Projects
 aghhk
