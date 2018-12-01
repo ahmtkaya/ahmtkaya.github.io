@@ -1,8 +1,3 @@
-<html lang="en" class=""><head>
-        <meta charset="utf-8">
-        <title>Ahmet Kaya Blog</title>
-        <link rel="stylesheet" href="https://blog.getpelican.com/theme/css/main.css" type="text/css">
-        <link href="https://github.com/ahmetkaya0107" type="application/atom+xml" rel="alternate" title=>
 </head>
 
 <body id="index" class="home" data-gr-c-s-loaded="true">
