@@ -13,7 +13,7 @@
         <header id="banner" class="body">
                 <h1><a https://sites.google.com/view/ahmet-kaya/home/">Plot1</a></h1>
                 <nav><ul>
-                    <li><a href="https://sites.google.com/view/ahmet-kaya-plot1/home">Plot1</a></li>
+                    <li><a href="https://github.com/ahmetkaya0107/ahmetkaya0107.github.io/blob/master/Prediction_auto_mpg.ipynb">Project1</a></li>
                     <li class="active"><a href="https://sites.google.com/view/ahmet-kaya-Plot2/home">Plot2</a></li>
                     <li><a href="https://github.com/ahmetkaya0107/CaliforniaDistrictsAnalysis">github</a></li>
                 </ul></nav>
