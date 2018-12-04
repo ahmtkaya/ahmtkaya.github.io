@@ -11,11 +11,14 @@
 
 <body id="index" class="home" data-gr-c-s-loaded="true">
         <header>
-                <nav><ul>
-                    <li><a href="/projects.html">Project1</a></li>
-                    <li class="active"><a href="https://sites.google.com/view/ahmet-kaya-Plot2/home">Plot2</a></li>
-                    <li><a href="https://github.com/ahmetkaya0107/CaliforniaDistrictsAnalysis">github</a></li>
-                </ul></nav>
+                <nav>
+                   <ul>
+                    <li><a href="/projects.html">About Me</a></li>
+                    <li><a href="/projects.html">Projects</a></li>
+                    <li><a href="/Resume.html">Resume</a></li>
+                    <li><a href="/Resume.html">BlogPost</a></li>
+                   </ul>
+                </nav>
         </header><!-- /#banner -->
         
         
