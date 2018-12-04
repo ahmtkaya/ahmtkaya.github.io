@@ -1,5 +1,5 @@
 <body id="index" class="home" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;"></div>
-        <a href="https://github.com/ahmtkaya"><img style="position: absolute; top: 0; right: 0; border: 0; width: 120px; height: 120px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-turquoise@2x.png" alt="Fork me on GitHub"></a>
+        <a href="https://github.com/ahmtkaya"><img style="position: absolute; top: 0; right: 0; border: 0; width: 150px; height: 150px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-turquoise@2x.png" alt="Fork me on GitHub"></a>
 
 <html lang="en" class=""><head>
         <meta charset="utf-8">
