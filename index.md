@@ -2,7 +2,7 @@
         <meta charset="utf-8">
         <title>Ahmet Kaya Blog</title>
         <link rel="stylesheet" href="https://blog.getpelican.com/theme/css/main.css" type="text/css">
-        <link href="https://github.com/ahmetkaya0107" type="application/atom+xml" rel="alternate" title=>
+        <link href="https://github.com/ahmetkaya0107" type="application/atom+xml" rel="alternate">
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -11,7 +11,6 @@
 
 <body id="index" class="home" data-gr-c-s-loaded="true">
         <header id="banner" class="body">
-                <h1><a https://sites.google.com/view/ahmet-kaya/home/">Plot1</a></h1>
                 <nav><ul>
                     <li><a href="/projects.html">Project1</a></li>
                     <li class="active"><a href="https://sites.google.com/view/ahmet-kaya-Plot2/home">Plot2</a></li>
