@@ -1,6 +1,6 @@
 <body id="index" class="home" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;"></div>
 <a href="http://github.com/ahmtkaya">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+
 </a>
         <header id="banner" class="body">
                 <h1><a href="https://ahmtkaya.github.io/">Ahmet Kaya  <strong>Data Science Blog</strong></a></h1>
