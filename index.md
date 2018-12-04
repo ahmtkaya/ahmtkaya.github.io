@@ -7,9 +7,6 @@
         <link rel="stylesheet" href="https://blog.getpelican.com/theme/css/main.css" type="text/css">
         <link href="https://github.com/ahmetkaya0107" type="application/atom+xml" rel="alternate">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
 </head>
 
 <body id="index" class="home" data-gr-c-s-loaded="true">
