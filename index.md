@@ -16,27 +16,6 @@
                     <li><a href="/projects.html">Projects</a></li>
                     <li><a href="/Resume.html">Resume</a></li>
                     <li><a href="/blogspot.html">BlogSpot</a></li>
-                <!--    <li class="active"><a href="https://sites.google.com/view/ahmet-kaya-Plot2/home">Plot2</a></li> 
-                    <li><a href="https://github.com/ahmetkaya0107/CaliforniaDistrictsAnalysis">github</a></li>  -->
-                </ul></nav>
-        </header><!-- /#banner -->        
-        
-        <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://github.com/ahmetkaya0107/CaliforniaDistrictsAnalysis">Percentage of English learners by County </a></h1> 
-                    <p>The percentile of the English learner rate for each county is given in the following map. Each color is representing the different percentile. The California's Public Schools and Districts Data is available via <a class="url fn" href="https://www.cde.ca.gov/ds/sd/sd/#esd">link</p>
-                  <iframe width="750" height="500" frameborder="0" scrolling="yes" src="//plot.ly/~ahmetkaya0107/183.embed"></iframe>
-</a></p><li><a href="https://github.com/ahmetkaya0107/CaliforniaDistrictsAnalysis">github</a></li>
-
-<footer class="post-info">
-        <abbr class="published" title="2016-12-12T00:00:00+01:00">
-                Mon 29 December 2018
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="https://github.com/ahmetkaya0107/CaliforniaDistrictsAnalysis">Ahmet Kaya</a>
-        </address>
-<p> <a href=""></a></p>
-
-</footer><!-- /.post-info -->
-<p></p></article></aside>
+                
+<p><strong>About Me</strong></p>
+<p><br />My journey started with Physics, fields very much intertwined with Mathematics, Statistics and Machine Learning. I am currently a Data and STEM Coordinator at the Coral Academy of Science Reno, NV. I have more than 10 years of data/research analysis experiences.<br /><br />At this juncture in my career in Data Science, I feel like having come across an old friend, however now endowed with so many powerful tools and resources. Libraries developed around the R-Studio are amazing. The Python Scikit-Learn package is quite comprehensive. I really enjoy programming in Python which to me is reminiscent of Matlab (and it's free!). What I really hooked up with is the Ipython (now called Jupyter) notebook. Being able to write notes, produce some code and see the results right beneath in a report format lead to fun AND structured learning. There are so many resources out there for anybody to pick up the necessary skills to be a good data scientist.<br /><br />I am truly impressed with the ecosystem built around this new exciting field. I think the power of the available material and tools is what enabled me to wade into its deep waters in such a short time. There is so much to learn, but the journey is good.<br /><br />Before diving into "learning" with the "machine" word in front, I have spent the past year trying to build a language learning system in the form of a startup. To me, the process of learning is just fascinating. Teaching what you have learned in fascination is itself fascinating. Things did not work out as I had planned, but I have learned a lot along the way. The journey goes on.<br /><br />I intend to post self-assigned projects on this website using, of course, the Jupyter notebook format. Thanks to GitHub and to the wonderful python tool, Pelican, I am able to post my notebooks as web pages. If you want to be part of this journey, follow along!</p>
