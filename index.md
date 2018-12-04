@@ -10,7 +10,7 @@
 </head>
 
 <body id="index" class="home" data-gr-c-s-loaded="true">
-        <header>
+        <header id="banner" class="body>
                 <nav>
                    <ul>
                     <li><a href="/projects.html">About Me</a></li>
