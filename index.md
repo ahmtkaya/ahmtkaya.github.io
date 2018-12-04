@@ -10,7 +10,7 @@
 </head>
 
 <body id="index" class="home" data-gr-c-s-loaded="true">
-        <header id="banner" class="body">
+        <header>
                 <nav><ul>
                     <li><a href="/projects.html">Project1</a></li>
                     <li class="active"><a href="https://sites.google.com/view/ahmet-kaya-Plot2/home">Plot2</a></li>
