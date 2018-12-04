@@ -1,0 +1,656 @@
+<body id="index" class="home" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;"></div>
+<a href="http://github.com/ahmtkaya">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+</a>
+        <header id="banner" class="body">
+                <h1><a href="https://ahmtkaya.github.io/">Ahmet Kaya  <strong>Data Science Blog</strong></a></h1>
+                <nav><ul>
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/aboutme.html">About</a></li>
+                    <li><a href="/projects.html">Projects</a></li>
+                    <li><a href="/Resume.html">Resume</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="">Project#1: Working with the Auto MPG Data Set   </a></h1>
+
+
+<header class="body"></header></nav></header>
+<blockquote>
+<p>&nbsp;</p>
+<table style="height: 2490px;" width="650">
+<tbody>
+
+<body style=""><div id="MathJax_Message" style="display: none;"></div>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Working-with-the-Auto-MPG-Data-Set">Working with the Auto MPG Data Set<a class="anchor-link" href="#Working-with-the-Auto-MPG-Data-Set">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post we will look into the Auto MPG data set and clean it so that it is ready for further use.</p>
+<p>This data set shows the mpg of a group of car models produced in the 1970s and the 1980s along with some characteristic information associated with each model. More information about the data set can be found here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="1.-Download-and-Load-Data-File">1. Download and Load Data File<a class="anchor-link" href="#1.-Download-and-Load-Data-File">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Download the auto-mpg.data data file and save it to the local directory where you would run the code on this page.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>df<span class="o">&lt;-</span>read.table<span class="p">(</span><span class="s">"http://archive.ics.uci.edu/ml/machine-learning-databases/auto-mpg/auto-mpg.data"</span><span class="p">,</span> quote <span class="o">=</span> <span class="s">"\""</span><span class="p">,</span> header <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> na.strings <span class="o">=</span> <span class="s">"?"</span><span class="p">,</span> row.names <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> col.names <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">"mpg"</span><span class="p">,</span> <span class="s">"cylinders"</span><span class="p">,</span> <span class="s">"displacement"</span><span class="p">,</span> <span class="s">"horsepower"</span><span class="p">,</span> <span class="s">"weight"</span><span class="p">,</span> <span class="s">"acceleration"</span><span class="p">,</span> <span class="s">"model_year"</span><span class="p">,</span> <span class="s">"origin"</span><span class="p">,</span> <span class="s">"car_name"</span><span class="p">))</span>
+<span class="c1">#there are 6 missing value</span>
+<span class="kp">dim</span><span class="p">(</span>df<span class="p">)</span>
+<span class="kp">table</span><span class="p">(</span><span class="kp">is.na</span><span class="p">(</span>df<span class="p">))</span>
+<span class="kp">head</span><span class="p">(</span>df<span class="p">,</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<ol class="list-inline">
+	<li>398</li>
+	<li>9</li>
+</ol>
+
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>FALSE  TRUE 
+ 3576     6 </pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<table>
+<thead><tr><th scope="col">mpg</th><th scope="col">cylinders</th><th scope="col">displacement</th><th scope="col">horsepower</th><th scope="col">weight</th><th scope="col">acceleration</th><th scope="col">model_year</th><th scope="col">origin</th><th scope="col">car_name</th></tr></thead>
+<tbody>
+	<tr><td>18                       </td><td>8                        </td><td>307                      </td><td>130                      </td><td>3504                     </td><td>12.0                     </td><td>70                       </td><td>1                        </td><td>chevrolet chevelle malibu</td></tr>
+	<tr><td>15                       </td><td>8                        </td><td>350                      </td><td>165                      </td><td>3693                     </td><td>11.5                     </td><td>70                       </td><td>1                        </td><td>buick skylark 320        </td></tr>
+	<tr><td>18                       </td><td>8                        </td><td>318                      </td><td>150                      </td><td>3436                     </td><td>11.0                     </td><td>70                       </td><td>1                        </td><td>plymouth satellite       </td></tr>
+	<tr><td>16                       </td><td>8                        </td><td>304                      </td><td>150                      </td><td>3433                     </td><td>12.0                     </td><td>70                       </td><td>1                        </td><td>amc rebel sst            </td></tr>
+	<tr><td>17                       </td><td>8                        </td><td>302                      </td><td>140                      </td><td>3449                     </td><td>10.5                     </td><td>70                       </td><td>1                        </td><td>ford torino              </td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">summary</span><span class="p">(</span>df<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>      mpg          cylinders      displacement     horsepower        weight    
+ Min.   : 9.00   Min.   :3.000   Min.   : 68.0   Min.   : 46.0   Min.   :1613  
+ 1st Qu.:17.50   1st Qu.:4.000   1st Qu.:104.2   1st Qu.: 75.0   1st Qu.:2224  
+ Median :23.00   Median :4.000   Median :148.5   Median : 93.5   Median :2804  
+ Mean   :23.51   Mean   :5.455   Mean   :193.4   Mean   :104.5   Mean   :2970  
+ 3rd Qu.:29.00   3rd Qu.:8.000   3rd Qu.:262.0   3rd Qu.:126.0   3rd Qu.:3608  
+ Max.   :46.60   Max.   :8.000   Max.   :455.0   Max.   :230.0   Max.   :5140  
+                                                 NA's   :6                     
+  acceleration     model_year        origin                car_name  
+ Min.   : 8.00   Min.   :70.00   Min.   :1.000   ford pinto    :  6  
+ 1st Qu.:13.82   1st Qu.:73.00   1st Qu.:1.000   amc matador   :  5  
+ Median :15.50   Median :76.00   Median :1.000   ford maverick :  5  
+ Mean   :15.57   Mean   :76.01   Mean   :1.573   toyota corolla:  5  
+ 3rd Qu.:17.18   3rd Qu.:79.00   3rd Qu.:2.000   amc gremlin   :  4  
+ Max.   :24.80   Max.   :82.00   Max.   :3.000   amc hornet    :  4  
+                                                 (Other)       :369  </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The data has 9 columns (features) and 398 entries. The labeling on the origin column is 1 for domestic, 2 for Europe and 3 for Asia. This data set is typically used to learn and predict the mpg column using the remaining columns. And, there 6 missing values in df</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2.-Cleaning-the-Data">2. Cleaning the Data<a class="anchor-link" href="#2.-Cleaning-the-Data">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Upon close inspection we find that there 6 missing values in the horsepower column and that they have been entered as "?"s:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">names</span><span class="p">(</span><span class="kp">which</span><span class="p">(</span><span class="kp">sapply</span><span class="p">(</span>df<span class="p">,</span> anyNA<span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+'horsepower'
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>median<span class="p">(</span>na.omit<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+93.5
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>boxplot<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">,</span> col.axis<span class="o">=</span><span class="s">'blue'</span><span class="p">,</span> las <span class="o">=</span> <span class="m">2</span><span class="p">,</span> 
+        col <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">"palevioletred1"</span><span class="p">),</span> col.main<span class="o">=</span><span class="s">"blue"</span><span class="p">,</span>
+        main <span class="o">=</span> <span class="kp">substitute</span><span class="p">(</span><span class="kp">paste</span><span class="p">(</span><span class="s">"spread, mean,and median of the horsepower values"</span><span class="p">)))</span>
+abline<span class="p">(</span>h <span class="o">=</span> <span class="kp">mean</span><span class="p">(</span>na.omit<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)),</span> lty <span class="o">=</span><span class="m">2</span><span class="p">,</span> col<span class="o">=</span><span class="s">'blue'</span><span class="p">)</span>
+text<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>na.omit<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)),</span>  labels <span class="o">=</span> <span class="kp">paste</span><span class="p">(</span><span class="s">"mean ="</span><span class="p">,</span> <span class="kp">round</span><span class="p">(</span><span class="kp">mean</span><span class="p">(</span>na.omit<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)),</span><span class="m">1</span><span class="p">)),</span>pos <span class="o">=</span> <span class="m">3</span><span class="p">,</span> font <span class="o">=</span> <span class="m">4</span><span class="p">,</span> col<span class="o">=</span><span class="s">'blue'</span><span class="p">)</span>
+abline<span class="p">(</span>h <span class="o">=</span> median<span class="p">(</span>na.omit<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)),</span> lty <span class="o">=</span><span class="m">5</span><span class="p">,</span> col<span class="o">=</span><span class="s">'black'</span><span class="p">)</span>
+text<span class="p">(</span>median<span class="p">(</span>na.omit<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)),</span>  labels <span class="o">=</span> <span class="kp">paste</span><span class="p">(</span><span class="s">"median ="</span><span class="p">,</span> <span class="kp">round</span><span class="p">(</span>median<span class="p">(</span>na.omit<span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)),</span><span class="m">1</span><span class="p">)),</span>pos <span class="o">=</span> <span class="m">1</span><span class="p">,</span> font <span class="o">=</span> <span class="m">4</span><span class="p">,</span> col<span class="o">=</span><span class="s">'black'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA0gAAANICAMAAADKOT/pAAAAilBMVEUAAAAAAP9NJzRNJ/xN&#10;Tf9oNUZoNfpoaP98P1N8P/d8fP+MR16MR/WMjP+aTmeaTvKamv+nVXCnVe+np/+yW3eyW+yy&#10;sv+9YH+9YOm9vf/HZYXHZeXHx//QaovQauLQ0P/ZbpHZbt3Z2f/hcpfhctnh4f/pdpzpdtPp&#10;6f/weqHwes3w8P//gqv///+FEzmTAAAACXBIWXMAABJ0AAASdAHeZh94AAAecklEQVR4nO3b&#10;AV/S3BuHcWYzSjM1yvL/WJZlWcj7f3v/nXM22BDQ4ncf8NzX9/N5AhW2eY/LweAZzQBsbbTr&#10;DQBKQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBAS&#10;IEBIgAAhAQKEBAgQEiBASIAAIQEChAQIEBIgQEiAACEBAoQECBASIEBIgAAhAQKEBAgQEiBA&#10;SIAAIQEChAQIEBIgQEiAACEBAoQECBASIFB0SFVVPcO1t/f7942/qKvqrPf12VM3Z7fz+gt7&#10;uKGEtHdr3zaki+aevZBu6uqpm7OHj8/V9nBDCWnv1r5tSOOqul2xGYRkipD2bu3bbvXS/Qkp&#10;i/0MaXpx1Mzq5Cp+EaZ22fyZPbvrvrwbV5Nwq0ld1ZP03dnVSfODcfvV3VldjS9Xz7td3Phm&#10;Nrusq6Obdo3rlhVuft1szdntYCmbbrJy7U9Y7fB+3d2fsDGz67PwbO56sab+aqv0jfDvzdF8&#10;jMNVL+7Zv8mD5abBD/bOYDlLu2qwgObb4ZeeNt+Yhl+2+aUe3rvds8FN9/z0LN1xeQ6zh38j&#10;+gsbbqS9vQzprm73/1H4KswjflV3QxzHn3S3io/Jo/Ye8aub9t7rQko3vpss7r5+Wc1Fut3g&#10;+dKmm6xe++OrXbpfe/GEjZnf5mTWL6db7SKkSW+Mg1Uvbty/yWC5i8EP985gOUu7arCA5qVb&#10;aOS6+TI8uq+q6uLhvcftUoN6nkm9Yg69EXWX/YUNNzKDvQzpLM562szucjZ/LFTpT1j75VUc&#10;dNppzTcvm4k1f+cmaZ/Vi7s8XPj8R3XvUbJ+WYtF9U6EbbzJ6rU/utrl+6WLJ2zM7GT+3ZPN&#10;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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Replacing the missing values with the mean / median / mode is a crude way of treating missing values. Depending on the context, like if the variation is low or if the variable has low leverage over the response, such a rough approximation is acceptable and could possibly give satisfactory results.</p>
+<p>To fix the missing value problem, we can fill in those locations with the median (if there are outliers in the data), the mean value of the horsepower data (if there aren't impact of outliers).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#install.packages('Hmisc')</span>
+<span class="c1">#library(Hmisc)</span>
+<span class="c1">#df[['horsepower']]=impute(df$horsepower, mean)  # median</span>
+<span class="c1">#df[['horsepower']]=impute(df$horsepower, mean)  # mean</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If the missing values in low percentile comparing population we can delete it. In this project, we will delete the missing values because the percentile of missing value is very low comparing rest of data</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>df <span class="o">&lt;-</span> na.omit<span class="p">(</span>df<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And also for linear regression method we can use mice library in r.
+Deterministic regression imputation via mice</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#library(mice)</span>
+<span class="c1">#imp &lt;- mice(df, method = "norm.predict", m = 1)</span>
+<span class="c1">#Store data</span>
+<span class="c1">#df &lt;- complete(imp)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">summary</span><span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   46.0    75.0    93.5   104.5   126.0   230.0 </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#we can remove that 6 row from df </span>
+df <span class="o">&lt;-</span> na.omit<span class="p">(</span>df<span class="p">)</span>
+<span class="kp">table</span><span class="p">(</span><span class="kp">is.na</span><span class="p">(</span>df<span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>FALSE 
+ 3528 </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">dim</span><span class="p">(</span>df<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<ol class="list-inline">
+	<li>392</li>
+	<li>9</li>
+</ol>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">summary</span><span class="p">(</span>df<span class="o">$</span>horsepower<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   46.0    75.0    93.5   104.5   126.0   230.0 </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, things are in order and the statistics should come out fine. We can use the summary(df) function to get a quick idea of the statistics of the data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="kp">summary</span><span class="p">(</span>df<span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>      mpg          cylinders      displacement     horsepower        weight    
+ Min.   : 9.00   Min.   :3.000   Min.   : 68.0   Min.   : 46.0   Min.   :1613  
+ 1st Qu.:17.00   1st Qu.:4.000   1st Qu.:105.0   1st Qu.: 75.0   1st Qu.:2225  
+ Median :22.75   Median :4.000   Median :151.0   Median : 93.5   Median :2804  
+ Mean   :23.45   Mean   :5.472   Mean   :194.4   Mean   :104.5   Mean   :2978  
+ 3rd Qu.:29.00   3rd Qu.:8.000   3rd Qu.:275.8   3rd Qu.:126.0   3rd Qu.:3615  
+ Max.   :46.60   Max.   :8.000   Max.   :455.0   Max.   :230.0   Max.   :5140  
+                                                                               
+  acceleration     model_year        origin                    car_name  
+ Min.   : 8.00   Min.   :70.00   Min.   :1.000   amc matador       :  5  
+ 1st Qu.:13.78   1st Qu.:73.00   1st Qu.:1.000   ford pinto        :  5  
+ Median :15.50   Median :76.00   Median :1.000   toyota corolla    :  5  
+ Mean   :15.54   Mean   :75.98   Mean   :1.577   amc gremlin       :  4  
+ 3rd Qu.:17.02   3rd Qu.:79.00   3rd Qu.:2.000   amc hornet        :  4  
+ Max.   :24.80   Max.   :82.00   Max.   :3.000   chevrolet chevette:  4  
+                                                 (Other)           :365  </pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-Saving-the-Data-as-a-.CSV-File">3. Saving the Data as a .CSV File<a class="anchor-link" href="#3.-Saving-the-Data-as-a-.CSV-File">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that the problems associated with the data are ironed out, we can save this version of the file to separate file. The data will be saved to a .csv due to its versatility.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span>write.csv<span class="p">(</span>df<span class="p">,</span> file <span class="o">=</span> <span class="s">"auto-mpg.csv"</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When needed, this file can now be loaded using the command df&lt;-read.csv("auto-mpg.csv") to variable df.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+
+ 
+
+
+
+</body>
+
+</blockquote>
+</nav></header>
+
+
+<footer class="post-info">
+        <abbr class="published" title="2017-01-03T23:50:00-08:00">
+                Published: 03 December 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://ahmtkaya.github.io/">Ahmet Kaya</a>
+        </address>
+
+
+
+        
+        <link rel="stylesheet" href="https://blog.getpelican.com/theme/css/main.css" type="text/css">
+        
+        
