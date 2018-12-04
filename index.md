@@ -14,7 +14,7 @@
                 <nav><ul>
                     <li><a href="/Aboutme.html">About Me</a></li>
                     <li><a href="/projects.html">Projects</a></li>
-                    <li><a href="/resume.html">Resume</a></li>
+                    <li><a href="/Resume.html">Resume</a></li>
                     <li><a href="/blogspot.html">BlogSpot</a></li>
                 <!--    <li class="active"><a href="https://sites.google.com/view/ahmet-kaya-Plot2/home">Plot2</a></li> 
                     <li><a href="https://github.com/ahmetkaya0107/CaliforniaDistrictsAnalysis">github</a></li>  -->
